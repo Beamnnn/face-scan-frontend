@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial - Face Recognition System</title>
+    <link rel="stylesheet" href="tuto.css">
+    
+</head>
+<body>
+
+    <div class="container">
+        <h1>How to Use the Face Recognition System</h1>
+
+        <div class="tutorial-step">
+            <h2>1. เปิดหน้าแรกของระบบ</h2>
+            <p>เมื่อเปิดระบบ จะพบหน้า <strong>FACE RECOGNITION SYSTEM</strong> ให้คลิกปุ่ม <strong>REGISTER FACE</strong></p>
+            <img src="/pic/1.png" alt="หน้าแรกของระบบ">
+        </div>
+
+        <div class="tutorial-step">
+            <h2>2. คลิกปุ่ม Register Face</h2>
+            <p>กดปุ่ม <strong>REGISTER FACE</strong> เพื่อเข้าสู่หน้าลงทะเบียน</p>
+            <img src="/pic/2.png" alt="คลิกปุ่ม Register Face">
+        </div>
+
+        <div class="tutorial-step">
+            <h2>3. กรอกชื่อและเลือกไฟล์รูปภาพ</h2>
+            <p>พิมพ์ชื่อที่คุณต้องการจะตั้งให้รูปภาพ และเลือกไฟล์ภาพที่ต้องการลงทะเบียน</p>
+            <img src="/pic/3.png" alt="กรอกชื่อและเลือกไฟล์">
+        </div>
+
+        <div class="tutorial-step">
+            <h2>4. เลือกไฟล์รูปภาพ</h2>
+            <p>เลือกไฟล์จากอุปกรณ์ของคุณ โดยกดที่ <strong>Choose file</strong></p>
+            <img src="/pic/4.png" alt="เลือกไฟล์ภาพ">
+        </div>
+
+        <div class="tutorial-step">
+            <h2>5. ตรวจสอบข้อมูลก่อนกด Register</h2>
+            <p>เลือกภาพที่ต้องการจะลงทะเบียน หลังจากนั้นกด <strong>Open</strong></p>
+            <img src="/pic/5.png" alt="ตรวจสอบก่อนกด Register">
+        </div>
+
+        <div class="tutorial-step">
+            <h2>6. ยืนยันการลงทะเบียนสำเร็จ</h2>
+            <p>หากลงทะเบียนสำเร็จ ระบบจะแสดงข้อความแจ้งเตือนบอกเป็นชื่อที่ลงทะเบียน</p>
+            <img src="/pic/6.png" alt="ลงทะเบียนสำเร็จ">
+        </div>
+
+        <div class="tutorial-step">
+            <h2>7. เริ่มต้นทดสอบการสแกนใบหน้า</h2>
+            <p>คลิกที่ปุ่ม <strong>Back to home</strong> เพื่อกลับไปยังหน้าหลัก</p>
+            <img src="/pic/7.png" alt="สแกนใบหน้า">
+        </div>
+
+        <div class="tutorial-step">
+            <h2>8. ทดสอบการสแกนใบหน้า</h2>
+            <p>กดที่ปุ่ม <strong>Scan Face</strong> และอัปโหลดรูปภาพเพื่อตรวจจับใบหน้า</p>
+            <img src="/pic/8.png" alt="สแกนใบหน้า">
+        </div>
+
+        <div class="tutorial-step">
+            <h2>9. ระบบตรวจจับใบหน้าจากฐานข้อมูล</h2>
+            <p>หากใบหน้าตรงกับที่ลงทะเบียน ระบบจะแสดงชื่อที่บันทึกไว้</p>
+            <img src="/pic/9.png" alt="ระบบตรวจจับใบหน้า">
+        </div>
+
+        <div class="tutorial-step">
+            <h2>10. การทดสอบครั้งที่ 1</h2>
+            <p>โดยเราจะเลือกรูปที่ไม่ใช่ตัวเขาแต่เป็นรูปที่คล้ายกัน ผลออกมาเป็น <strong>No face detected</strong></p>
+            <img src="/pic/10.png" alt="หน้าต่างเลือกไฟล์">
+        </div>
+
+        <div class="tutorial-step">
+            <h2>11. การทดสอบครั้งที่ 2</h2>
+            <p>โดยครั้งนี้เราจะเลือกรูปภาพที่เป็นตัวเขาอีกรูป </p>
+            <img src="/pic/11.png" alt="ยืนยันการเลือกไฟล์">
+        </div>
+
+        <div class="tutorial-step">
+            <h2>12. ผลการทดสอบครั้งที่ 2</h2>
+            <p>ผลออกมาเป็น <strong>Recognized: mbappe</strong></p>
+            <img src="/pic/12.png" alt="แสดงข้อมูลไฟล์ที่อัปโหลด">
+        </div>
+
+
+        <button onclick="goBack()">Back to Home</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

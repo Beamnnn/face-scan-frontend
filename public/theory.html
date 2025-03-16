@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work Detail</title>
+    <link rel="stylesheet" href="theory.css">
+</head>
+<body>
+    <div class="container">
+        <h1>WORK DETAIL</h1>
+
+        <div class="tutorial-step">
+            <h2>1. การทำงานภายใน MongoDB</h2>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ระบบจดจำใบหน้าใช้ MongoDB ในการจัดเก็บข้อมูลใบหน้าที่ลงทะเบียนไว้ โดยมีโครงสร้างฐานข้อมูลดังนี้:</p>
+            <ul>
+                <li><strong>โครงสร้างฐานข้อมูล</strong> - ข้อมูลถูกเก็บใน <strong>Collection</strong> ชื่อ <code>registered_faces</code> โดยแต่ละเอกสารมีฟิลด์สำคัญ ได้แก่:
+                    <ul>
+                        <li><strong>_id</strong> - รหัสเอกสารที่ MongoDB กำหนดอัตโนมัติ</li>
+                        <li><strong>name</strong> - ชื่อของบุคคลที่ลงทะเบียน</li>
+                        <li><strong>encoding</strong> - อาร์เรย์ค่าตัวเลข 128 ค่า ที่เป็นตัวแทนใบหน้า</li>
+                    </ul>
+                </li>
+                <li><strong>การเพิ่มข้อมูล (Insert Data)</strong> - เมื่อผู้ใช้ลงทะเบียน ระบบจะสร้าง <strong>Face Embedding</strong> และบันทึกลง MongoDB</li>
+                <li><strong>การค้นหาข้อมูล (Query Data)</strong> - ระบบใช้ <strong>Vector Matching</strong> เทียบค่า <code>encoding</code> กับฐานข้อมูลเพื่อตรวจสอบใบหน้าที่ตรงกัน</li>
+                <li><strong>การอัปเดตและลบข้อมูล (Update & Delete)</strong> - สามารถอัปเดตหรือลบข้อมูลบุคคลที่ลงทะเบียนได้</li>
+            </ul>
+        </div>
+        
+
+        <div class="tutorial-step">
+            <h2>2. Machine Learning Model</h2>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ใช้้<strong></strong>โมเดล Machine Learning  ที่ใช้ในโปรเจคนี้คือ <strong>Random Forest</strong> โดยใช้ RandomForestClassifier จาก sklearn (scikit-learn) ซึ่งเป็นโมเดลที่สามารถเรียนรู้และทำนายข้อมูลที่มีความซับซ้อนได้ดี
+                ในกรณีของโปรเจคนี้ โมเดล Random Forest ใช้ feature vectors ที่ได้จากการแปลงภาพใบหน้าเป็นข้อมูลตัวเลข (ผ่านการแปลงภาพ เช่น การใช้ face_encodings จาก face_recognition library) เพื่อทำการฝึกและทำนายว่าผู้ใช้คือใคร
+                โมเดลนี้ใช้เพื่อการ จำแนกประเภทใบหน้า ที่เก็บไว้ในฐานข้อมูล เช่น เมื่อผู้ใช้สมัครใหม่ ระบบจะเก็บข้อมูลใบหน้าและเมื่อมีการสแกนใบหน้าใหม่ จะใช้โมเดลนี้ในการทำนายว่าผู้ใช้คนนั้นคือใครเพื่อช่วยจำแนกใบหน้า โดยใช้อัลกอริทึม เช่น:</p>
+           
+        </div>
+
+        <div class="tutorial-step">
+            <h2>3. Neural Network Model</h2>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ใช้ <strong>โมเดล Neural Network (CNN) จะใช้สำหรับการ จำแนกใบหน้า โดยใช้ Convolutional Neural Networks (CNN) ซึ่งเป็นเทคนิคที่เหมาะสำหรับงานที่เกี่ยวข้องกับ การรู้จำภาพ เช่น Face Recognition
+                โมเดล CNN จะเรียนรู้คุณลักษณะต่าง ๆ ของใบหน้า เช่น รูปร่างของตา จมูก และปาก เพื่อสามารถจำแนกได้ว่าใครเป็นเจ้าของใบหน้านั้น
+                CNN มักจะใช้ในการจำแนกภาพที่มีความซับซ้อนสูง ซึ่งในกรณีนี้จะมีความแม่นยำสูงกว่า Random Forest เมื่อใช้กับข้อมูลภาพ
+                ในโปรเจคนี้ที่คุณกำลังพัฒนา:
+                
+                 </strong> </p>
+            <ul>
+                <li><strong>Random Forest </strong>ใช้สำหรับการ จำแนกใบหน้า จากฟีเจอร์ที่ได้จากการแปลงภาพเป็นข้อมูลตัวเลข</li>
+                <li><strong>Neural Network (CNN)</strong> จะใช้สำหรับ การจำแนกใบหน้า จากภาพโดยตรง โดยเรียนรู้ลักษณะต่าง ๆ ของใบหน้า</li>
+            </ul>
+            
+        </div>
+
+        <div class="tutorial-step">
+            <h2>4. การทำงานของระบบจดจำใบหน้า</h2>
+            <ul>
+                <li><strong>การลงทะเบียนใบหน้า (Register Face)</strong> - ผู้ใช้ต้องอัปโหลดภาพใบหน้าและระบบจะบันทึกข้อมูลลงฐานข้อมูล</li>
+                <li><strong>การสแกนใบหน้า (Scan Face)</strong> - ระบบจะนำภาพที่อัปโหลดมาเปรียบเทียบกับฐานข้อมูลเพื่อตรวจสอบว่าใบหน้านั้นตรงกับบุคคลใด</li>
+            </ul>
+        </div>
+
+        <button onclick="goBack()">Back to Home</button>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
