@@ -24,6 +24,9 @@ app.get("/nn-demo", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "tutorial.html"));
 });
 
+// เสิร์ฟไฟล์จากโฟลเดอร์ pic/ 🔥
+app.use("/pic", express.static(path.join(__dirname, "pic")));
+
 // เริ่มเซิร์ฟเวอร์ และให้สามารถเข้าถึงจากทุก IP ได้
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`Frontend running at http://0.0.0.0:${PORT}`);
