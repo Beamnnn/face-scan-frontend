@@ -24,7 +24,7 @@ app.get("/nn-demo", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "tutorial.html"));
 });
 
-// เริ่มเซิร์ฟเวอร์
-app.listen(PORT, () => {
-    console.log(`Frontend running at http://127.0.0.1:${PORT}`);
+// เริ่มเซิร์ฟเวอร์ และให้สามารถเข้าถึงจากทุก IP ได้
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Frontend running at http://0.0.0.0:${PORT}`);
 });
